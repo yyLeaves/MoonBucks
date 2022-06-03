@@ -1,4 +1,7 @@
 from moon_words import positive_words, negative_words, stopwords
+import re
+import dill as pickle
+from cfg import sentiment_trie_path
 
 
 class Node:
@@ -9,7 +12,7 @@ class Node:
         self.children = {}
         self.is_end = False
         self.sentiment = 0
-        self.word = None
+        # self.word = None
 
 
 class SentimentTrie:
@@ -71,16 +74,16 @@ class SentimentTrie:
         else:
             return neutral_sentiment
 
-    def sentiment_search(self, article_arr: list):
-        """search if the words are in the sentiment tree and return the sentiment word counts
-        :param article_arr: all words in an article as a list
-        :return: sentiment dict of the number of neutral, positive, negative, stop words
-        """
-        sentiment = {0: 0, 1: 0, -1: 0, 11: 0}
-        for word in article_arr:
-            word_sentiment = self.search(word)
-            sentiment[word_sentiment] += 1
-        return sentiment
+    # def sentiment_search(self, article_arr: list):
+    #     """search if the words are in the sentiment tree and return the sentiment word counts
+    #     :param article_arr: all words in an article as a list
+    #     :return: sentiment dict of the number of neutral, positive, negative, stop words
+    #     """
+    #     sentiment = {0: 0, 1: 0, -1: 0, 11: 0}
+    #     for word in article_arr:
+    #         word_sentiment = self.search(word)
+    #         sentiment[word_sentiment] += 1
+    #     return sentiment
 
     def generate_sentiment_search_report(self, article_arr: list):
         """if the words are in the sentiment tree and return the sentiment search reports
@@ -135,40 +138,42 @@ class SentimentTrie:
 
 class trie_utils:
     def __init__(self):
-        self.sentiment_trie = None
+        self.path = sentiment_trie_path
+
+    def preprocess(self, str):
+        return re.sub('[^a-zA-Z\s\-]', ' ', str).split()
 
     def build_sentiment_trie(self):
         st = SentimentTrie()
         st.insert_words(positive_words, 1)
         st.insert_words(negative_words, -1)
-        print(st)
-        self.sentiment_trie = st
+        st.insert_words(stopwords, 11)
+        self.pickle_dump_trie(st)
+        return st
 
-    def get_sentiment_trie(self):
-        if self.sentiment_trie is None:
-            return self.build_sentiment_trie()
-        else:
-            return self.sentiment_trie
-
-    def pickle_dump_trie(self):
-        pass
+    def pickle_dump_trie(self, trie):
+        file_obj = open(self.path, 'wb')
+        pickle.dump(trie, file_obj)
+        file_obj.close()
 
     def pickle_load_trie(self):
-        pass
+        file_obj = open(self.path, 'rb')
+        st = pickle.load(file_obj)
+        file_obj.close()
+        return st
+
+    def get_score(self, sentiment):
+        # print(sentiment)
+        return (int(sentiment[1]) / int(sentiment[-1])) / int(sentiment[0]) * 100
 
 
 from articles import cn
 
 if __name__ == '__main__':
-    trie = SentimentTrie()
-    trie.insert_words(positive_words, 1)
-    trie.insert_words(negative_words, -1)
-    # some stopwords are also in neg / pos words
-    # if want to give priority to them, can move it up
-    trie.insert_words(stopwords, 11)
-    # result = trie.search_article(cn.split())
-    cn_arr = cn.split()
-    res = trie.sentiment_search(cn_arr)
-    # res = trie.generate_sentiment_search_report(cn_arr)
-    print(len(cn_arr))
+    trie = trie_utils().pickle_load_trie()
+
+    article_arr = trie_utils().preprocess(cn)
+    res = trie.generate_sentiment_search_report(article_arr)
+    res = trie.sentiment_search('bad')
+
     print(res)
