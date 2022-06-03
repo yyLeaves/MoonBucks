@@ -141,7 +141,7 @@ class trie_utils:
         self.path = sentiment_trie_path
 
     def preprocess(self, str):
-        return re.sub('[^a-zA-Z\s\-]', ' ', str).split()
+        return re.sub('[^a-zA-Z\s\-]', ' ', str).lower().split()
 
     def build_sentiment_trie(self):
         st = SentimentTrie()
