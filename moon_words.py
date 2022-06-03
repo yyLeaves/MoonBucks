@@ -1,4 +1,5 @@
-sentiments = {0: 'Neutral', 1: 'Positive', -1: 'Negative'}
+sentiment_to_num = {'positive': 1, 'negative': -1, 'neutral': 0, 'stop': 11}
+num_to_sentiment = {1: 'positive', -1: 'negative', 0: 'neutral', 11: 'stop'}
 
 stopwords = ['a', 'about', 'above', 'across', 'after', 'afterwards', 'again', 'against', 'all', 'almost', 'alone',
              'along', 'already', 'also', 'although', 'always', 'am', 'among', 'amongst', 'amoungst', 'amount',
