@@ -3,10 +3,6 @@ from articles import articles
 
 if __name__ == '__main__':
     trie = trie_utils().pickle_load_trie()
-    article_arr = trie_utils().preprocess(cn)
-    res = trie.generate_sentiment_search_report(article_arr)
-    print(res['sentiment'])
-    print(trie_utils().get_score(res['sentiment']))
 
     for country in articles.keys():
         article_arr = trie_utils().preprocess(articles[country])
