@@ -36,3 +36,7 @@ Since the positive and negative words already have -ed, -es form, there is no ne
 To calculated the score, we think only using positive subtract negative words may not be a good idea, since there are
 long articles and short articles, long article definately have more positive words and more negative words, so we use (
 positive words / negative words) / (neutral words) * 1000 to calculate the score
+
+The graph function is added to the program so the result can be seen in a visual way. Also, there is a score-rank bar 
+graph to show the score of each country in ascending order. The method is implemented by using plotly package, which
+is a very efficient tool to draw graphs.
