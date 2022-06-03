@@ -155,5 +155,3 @@ a big pick-up from just under 3% at the start of the year,” Casali added. “A
 (and cheap valuations) should limit U.K. equity downside in current volatile market conditions.” """
 
 articles = {'cn': cn, 'ae': ae, 'ca': ca, 'us': us, 'uk': uk}
-
-print()

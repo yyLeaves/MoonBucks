@@ -28,4 +28,11 @@ the pos, neg, stop, and neutral words, Instead of build an individual stopword t
 sentiment analysis. It will be a little bit more efficient just to store them altogether in a single trie. Although the
 complexities are about the same.
 
+Besides, I also stored the trie in a pickle file of all the words, so that every time we need to analyse an article, we
+don't have to build a trie. instead we simply load the trie from pickle file and that can save some time complexity
+
 Since the positive and negative words already have -ed, -es form, there is no need to lemmatize them.
+
+To calculated the score, we think only using positive subtract negative words may not be a good idea, since there are
+long articles and short articles, long article definately have more positive words and more negative words, so we use (
+positive words / negative words) / (neutral words) * 1000 to calculate the score

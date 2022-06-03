@@ -1,10 +1,8 @@
-from articles import cn
 from Trie import *
 from articles import articles
 
 if __name__ == '__main__':
-    # trie = trie_utils().pickle_load_trie()
-    trie = trie_utils().build_sentiment_trie()
+    trie = trie_utils().pickle_load_trie()
     article_arr = trie_utils().preprocess(cn)
     res = trie.generate_sentiment_search_report(article_arr)
     print(res['sentiment'])
@@ -18,4 +16,3 @@ if __name__ == '__main__':
         print(
             f"{country} has {sentiment[0]} neutral words, {sentiment[-1]} negative words, {sentiment[1]} positive words, {sentiment[11]} stop words")
         print(f"{country} has a score of {score}")
-        # print(trie.generate_sentiment_search_report(articles[country])['sentiment'])
