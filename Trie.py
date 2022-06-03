@@ -74,16 +74,16 @@ class SentimentTrie:
         else:
             return neutral_sentiment
 
-    # def sentiment_search(self, article_arr: list):
-    #     """search if the words are in the sentiment tree and return the sentiment word counts
-    #     :param article_arr: all words in an article as a list
-    #     :return: sentiment dict of the number of neutral, positive, negative, stop words
-    #     """
-    #     sentiment = {0: 0, 1: 0, -1: 0, 11: 0}
-    #     for word in article_arr:
-    #         word_sentiment = self.search(word)
-    #         sentiment[word_sentiment] += 1
-    #     return sentiment
+    def sentiment_search(self, article_arr: list):
+        """search if the words are in the sentiment tree and return the sentiment word counts
+        :param article_arr: all words in an article as a list
+        :return: sentiment dict of the number of neutral, positive, negative, stop words
+        """
+        sentiment = {0: 0, 1: 0, -1: 0, 11: 0}
+        for word in article_arr:
+            word_sentiment = self.search(word)
+            sentiment[word_sentiment] += 1
+        return sentiment
 
     def generate_sentiment_search_report(self, article_arr: list):
         """if the words are in the sentiment tree and return the sentiment search reports
@@ -170,10 +170,4 @@ class trie_utils:
 from articles import cn
 
 if __name__ == '__main__':
-    trie = trie_utils().pickle_load_trie()
-
-    article_arr = trie_utils().preprocess(cn)
-    res = trie.generate_sentiment_search_report(article_arr)
-    res = trie.sentiment_search('bad')
-
-    print(res)
+    pass

@@ -6,8 +6,14 @@ if __name__ == '__main__':
 
     for country in articles.keys():
         article_arr = trie_utils().preprocess(articles[country])
-        res = trie.generate_sentiment_search_report(article_arr)
-        sentiment = res['sentiment']
+
+        # If want other stats about words, run the below,
+        # you can fetch the stats in the dict
+        # res = trie.generate_sentiment_search_report(article_arr)
+        # sentiment = res['sentiment']
+
+        # If only want score, this will be more efficiency
+        sentiment = trie.sentiment_search(article_arr)
         score = trie_utils().get_score(sentiment)
         print(
             f"{country} has {sentiment[0]} neutral words, {sentiment[-1]} negative words, {sentiment[1]} positive words, {sentiment[11]} stop words")
