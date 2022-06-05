@@ -21,23 +21,22 @@ class Graph:
         self.score.append(country_detail[5])
 
     def graph_maker(self):
-        # trace = [len(self.country_name)]
-        positive = pg.Scatter(
+        positive = pg.Bar(
             x=self.country_name,
             y=self.positive_word,
             name="Positive Words"
         )
-        negative = pg.Scatter(
+        negative = pg.Bar(
             x=self.country_name,
             y=self.negative_word,
             name="Negative Words"
         )
-        neutral = pg.Scatter(
+        neutral = pg.Bar(
             x=self.country_name,
             y=self.neutral_word,
             name="Neutral Words"
         )
-        stopwords = pg.Scatter(
+        stopwords = pg.Bar(
             x=self.country_name,
             y=self.stopwords_word,
             name="Stopwords Words"
@@ -48,7 +47,7 @@ class Graph:
             title="Words Sentiment Analysis"
         )
         fig = pg.Figure(data=trace, layout=layout)
-        plotly.offline.plot(fig, filename='Scatter.html')
+        plotly.offline.plot(fig, filename='Bar.html')
 
     def score_ranker(self):
         arr1 = np.array(self.country_name)
@@ -57,7 +56,7 @@ class Graph:
         arr1 = arr1[arrIndex]
         arr2 = arr2[arrIndex]
 
-        score_rank = pg.Bar(
+        score_rank = pg.Scatter(
             x=arr1,
             y=arr2,
             name="Score"
