@@ -20,8 +20,6 @@ class SentimentTrie:
 
     def __init__(self):
         self.root = Node(None)
-        self.sentiment_trie = None
-        self.search_result = {}
 
     def insert(self, key: str, sentiment: int):
         """
@@ -164,7 +162,7 @@ class trie_utils:
 
     def get_score(self, sentiment):
         # print(sentiment)
-        return (int(sentiment[1]) / int(sentiment[-1])) / int(sentiment[0]) * 100
+        return (int(sentiment[1]) - int(sentiment[-1])) / int(sentiment[0]) * 100
 
 
 from articles import articles
@@ -180,10 +178,9 @@ if __name__ == '__main__':
         # res = trie.generate_sentiment_search_report(article_arr)
         # sentiment = res['sentiment']
 
-        # If only want score, this will be more efficiency
+        # If only want score, this will be more efficient
         sentiment = trie.sentiment_search(article_arr)
         score = trie_utils().get_score(sentiment)
         print(
             f"{country} has {sentiment[0]} neutral words, {sentiment[-1]} negative words, {sentiment[1]} positive words, {sentiment[11]} stop words")
         print(f"{country} has a score of {score}")
-    pass
