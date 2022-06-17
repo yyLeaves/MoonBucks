@@ -40,3 +40,9 @@ positive words - negative words) / (neutral words) * 100 to calculate the score
 The graph function is added to the program so the result can be seen in a visual way. Also, there is a score-rank bar
 graph to show the score of each country in ascending order. The method is implemented by using plotly package, which is
 a very efficient tool to draw graphs.
+
+Week 13
+
+Add pick country method to pick top 5 countries
+
+Update articles for top 5 countries
