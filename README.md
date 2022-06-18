@@ -1,18 +1,37 @@
-Week 8:
+# Algo-assignment
 
-preprocess the negative words and positive words in a python list in module 'moon_words.py' so that it can be imported
-to be used easily.
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> [@yyLeaves](https://github.com/yyLeaves): Chief Algorithm Engineer
 
-write the code to preprocess the text.
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/49346779?s=48&amp;v=4" alt="@Koukotsukan" class=" avatar-user" width="24" height="24"> [@Koukotsukan](https://github.com/Koukotsukan): Developer
 
-Week 9:
+## Week 8:
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
+
+In order to process the articles later, I suppose to prepare a word list about positive and negative words
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
+
+I write the code to preprocess the negative words and positive words in a python list in module 'moon_words.py' so that it can be imported
+to be used easily. 
+
+## Week 9:
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
 
 Question 1 should be a multiple string match problem. I googled the problem, and found that aho-corasick algorithm can
 satisfy the problem. AC algorithm is the combination of KMP and Trie structure. It has linear time complexity in
 matching. We can store the Trie structure in previous, and save it in a pickle file for future use, so that it saves the
 preprocess time.
 
-Week 10
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/49346779?s=48&amp;v=4" alt="@Koukotsukan" class=" avatar-user" width="24" height="24"> __@Koukotsukan:__
+
+Using Trie, search complexities can be brought to optimal limit. Unlike a binary search tree, nodes in the trie do not 
+store their associated key. Instead, a node's position in the trie defines the key with which it is associated. 
+
+## Week 10:
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
 
 I implemented the AC algorithm, but there is a problem. The algorithm match all the existing patterns based on
 characters instead of words. For example, in string 'apple tree' and pattern 'app', 'apple', the result will return
@@ -20,7 +39,14 @@ the 'app' and 'apple' together, and that is definately not what we want. Maybe T
 can add the word's sentiment in trie node self.sentiment, in doing so, we can store all positive words and negative
 words in one trie structure.
 
-Week 11
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/49346779?s=48&amp;v=4" alt="@Koukotsukan" class=" avatar-user" width="24" height="24"> __@Koukotsukan:__
+
+For the graph for the results of our sentimental analysis, I was asked to use a visualization tool named plotly. I find 
+it can run in 2 modes, which are online and offline. For our project, it is more convinient to run it in offline mode.
+
+## Week 11:
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
 
 I implemented the Trie algorithm, besides the positive and negative words, I also add the stopwords in the trie. It
 turns out that the stopwords also takes a big part of the overall words in an article. For the task of simply counting
@@ -37,12 +63,21 @@ To calculated the score, we think only using positive subtract negative words ma
 long articles and short articles, long article definately have more positive words and more negative words, so we use (
 positive words - negative words) / (neutral words) * 100 to calculate the score
 
-The graph function is added to the program so the result can be seen in a visual way. Also, there is a score-rank bar
-graph to show the score of each country in ascending order. The method is implemented by using plotly package, which is
-a very efficient tool to draw graphs.
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/49346779?s=48&amp;v=4" alt="@Koukotsukan" class=" avatar-user" width="24" height="24"> __@Koukotsukan:__
 
-Week 13
+In order to visualize the results of the sentimental analysis, I need to pass country names and their corresponding 
+results about positive, negative, neutral and stop words from the results dict to plotly function so the result can be 
+seen in a visual way, so I use oop knowledge to create a Graph object, which can store all the attributes of the results
+of different countries. and Also, I make a score-rank bar graph to show the score of each country in ascending order. 
+This part is implemented by using plotly package, which is an efficient tool to draw graphs, and numpy, which is used to 
+sort the array and transpose the matrix. 
 
-Add pick country method to pick top 5 countries
+## Week 13:
 
-Update articles for top 5 countries
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/76979429?s=48&amp;v=4" alt="@yyLeaves" class=" avatar-user" width="24" height="24"> __@yyLeaves:__
+
+I add pick country method to let user pick top 5 countries, and I update articles for the top 5 countries.
+
+<img style="border-radius:50% !important;" src="https://avatars.githubusercontent.com/u/49346779?s=48&amp;v=4" alt="@Koukotsukan" class=" avatar-user" width="24" height="24"> __@Koukotsukan:__
+
+@yyLeaves update her code to pass parameters in a better way, so I decide to abort using oop for the graph.py to make the code more concise.
