@@ -4,9 +4,7 @@ import numpy as np
 
 
 def graph(country_detail):
-    print(country_detail)
     country_detail = np.transpose(country_detail)
-    print(country_detail)
     positive = pg.Bar(
         x=country_detail[0],
         y=np.array(country_detail[3]).astype(int),
@@ -35,7 +33,7 @@ def graph(country_detail):
     plotly.offline.plot(fig, filename='Bar.html')
 
     arr1 = np.array(country_detail[0])
-    arr2 = np.array(country_detail[5])
+    arr2 = np.array(country_detail[5]).astype(float)
     arrIndex = np.array(arr2).argsort()
     arr1 = arr1[arrIndex]
     arr2 = arr2[arrIndex]

@@ -4,7 +4,6 @@ from moon_utils import pick_country
 from graph import graph
 
 if __name__ == '__main__':
-
     # pick country
     top5 = pick_country(5)
     print(f"Top 5 countries with most stores are {', '.join(top5)}\n")
