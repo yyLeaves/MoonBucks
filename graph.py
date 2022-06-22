@@ -1,9 +1,8 @@
-import plotly
 import plotly.graph_objs as pg
 import numpy as np
 
 
-def graph(country_detail):
+def bar_graph(country_detail):
     country_detail = np.transpose(country_detail)
     positive = pg.Bar(
         x=country_detail[0],
@@ -30,8 +29,11 @@ def graph(country_detail):
         title="Words Sentiment Analysis"
     )
     fig = pg.Figure(data=trace, layout=layout)
-    plotly.offline.plot(fig, filename='Bar.html')
+    fig.write_html("Bar.html")
 
+
+def score_graph(country_detail):
+    country_detail = np.transpose(country_detail)
     arr1 = np.array(country_detail[0])
     arr2 = np.array(country_detail[5]).astype(float)
     arrIndex = np.array(arr2).argsort()
@@ -47,5 +49,4 @@ def graph(country_detail):
         title="Score Rank"
     )
     fig = pg.Figure(data=score_rank, layout=layout)
-    plotly.offline.plot(fig, filename="Rank.html")
-
+    fig.write_html("Rank.html")
