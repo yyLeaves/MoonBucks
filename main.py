@@ -1,7 +1,7 @@
 from Trie import *
 from articles import articles
 from moon_utils import pick_country
-from graph import graph
+import graph
 
 if __name__ == '__main__':
     # pick country
@@ -29,4 +29,5 @@ if __name__ == '__main__':
         print(
             f"{country} has {sentiment[0]} neutral words, {sentiment[-1]} negative words, {sentiment[1]} positive words, {sentiment[11]} stop words")
         print(f"{country} has a score of {score}")
-    graph(data_list)
+    graph.bar_graph(data_list)
+    graph.score_graph(data_list)
