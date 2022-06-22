@@ -48,4 +48,3 @@ def graph(country_detail):
     )
     fig = pg.Figure(data=score_rank, layout=layout)
     plotly.offline.plot(fig, filename="Rank.html")
-

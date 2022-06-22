@@ -1,2 +1,2 @@
-sentiment_trie_path = 'st.pkl'
-csv_path = 'moonbucks.csv'
+sentiment_trie_path = '../../../../../Python/MoonBucks/st.pkl'
+csv_path = '../../../../../Python/MoonBucks/moonbucks.csv'
