@@ -1,12 +1,10 @@
 # https://hub.jhu.edu/2022/06/08/us-economy-rising-inflation-impending-recession/
-us = """
-What's happening with the American economy right now?
-A strange confluence of factors—a prolonged labor shortage, supply chain disruptions, and chaos in the energy market—makes it hard to predict where the U.S. economy is heading. Economist Laurence Ball discusses what factors influence rising inflation and what could trigger a recession.
-A gas station sign reads the cost per gallon of regular unleaded gas is $5.39
-CREDIT:GETTY IMAGES
+us = """What's happening with the American economy right now? A strange confluence of factors—a prolonged labor 
+shortage, supply chain disruptions, and chaos in the energy market—makes it hard to predict where the U.S. economy is 
+heading. Economist Laurence Ball discusses what factors influence rising inflation and what could trigger a 
+recession. A gas station sign reads the cost per gallon of regular unleaded gas is $5.39 By Brennen Jensen / 
+Published 8 Jun 2022 
 
-ByBrennen Jensen / Published Jun 8
- MEDIA INQUIRIES
 It's the best of times and it's the worst of times. It's the U.S. economy in 2022.
 
 On one hand, unemployment is at near historic lows, job growth is strong, and consumer spending robust. Viewed 
@@ -71,12 +69,31 @@ of attention talking about inflation being a big problem, I wrote a paper with s
 Monetary Fund on what's going on with inflation. It was a great paper, well-researched and persuasive. And it showed, 
 conclusively, that it was all a transitory phenomenon, and it was going to go away soon. That turned out to be, 
 within four to six months, wildly inaccurate. I'm a little bit scarred by that experience and reluctant to predict. 
-You can just put me down as getting nervous. """
+You can just put me down as getting nervous. 
+
+It's the best of times and it's the worst of times. It's the U.S. economy in 2022.
+
+On one hand, unemployment is at near historic lows, job growth is strong, and consumer spending robust. Viewed 
+through these lenses alone, the future looks bright. But alas, there's a pernicious visitor back from the 1970s and 
+early '80s: high inflation. Consumers see this most at the gas pump. The Russian invasion of Ukraine has roiled 
+energy markets leaving many Americans paying more than $5 a gallon for gas. Add in pandemic-related supply chain 
+disruptions and goods shortages related to factories shuttered for lockdowns, and our sunny financial skies face some 
+headwinds. 
+
+In the middle of this potentially gathering storm is the Federal Reserve, trying to rein in the economy's excesses 
+without causing pain of its own. Economists once predicted that our post-pandemic economy would resemble the Roaring 
+'20s, and now a different "R" word is being bandied about: recession. 
+
+Suffice it to say, it's a curious time to be an economist, as economics Professor Laurence Ball well knows. """
 
 # https://globalnews.ca/news/8875393/bank-canada-interest-rate-inflation-june-2022/
-ca = """The Bank of Canada is likely to hike its benchmark interest rate another half a percentage point on June 1, 
-further raising the cost of borrowing to tackle “persistent” inflation levels not seen in 30 years, economists predict. 
+ca = """Canadians may see a 0.5% interest rate hike this week thanks to ‘persistent’ inflation Canada is seeing 
+30-year highs in our inflation rate as the global economy recovers from the shock of the COVID-19 pandemic. The Bank 
+of Canada is raising key interest rates in an attempt to rein in inflation, but is it the right move? Is it enough? 
+By Craig Lord / Published 30 May 2022 
 
+The Bank of Canada is likely to hike its benchmark interest rate another half a percentage point on June 1, 
+further raising the cost of borrowing to tackle “persistent”inflation levels not seen in 30 years, economists predict. 
 
 Economists who spoke to Global News all said they expect the central bank’s key interest rate to rise to 1.5 per cent 
 on Wednesday. 
@@ -162,9 +179,7 @@ in,” Orlando said. """
 # https://www.imf.org/en/News/Articles/2022/05/31/CF-Japan-Digitalization-Can-Add-Momentum-for-Economic-Rebound
 jp = """
 Japan's Digitalization Can Add Momentum for Economic Rebound
-By Piyaporn Sodsriwiboon, Purva Khera, and Rui Xu
-
-June 1, 2022
+By Piyaporn Sodsriwiboon, Purva Khera, and Rui Xu / Published 1 Jun 2022
 
 The Japanese economy is recovering from the pandemic as related uncertainty and supply constraints subside and 
 consumption gradually rebounds. 
@@ -227,6 +242,7 @@ through reforms that lift productivity and economic growth. """
 # https://www.cnn.com/2022/06/10/economy/china-economy-recovery-tech-trade-intl-hnk/index.html
 cn = """
 China's economy is looking brighter but it's not in the clear yet
+By Laura He / Published 10 Jun 2022
 
 Hong Kong (CNN Business)From big gains in tech stocks to robust trade data, China has had plenty of good news on the 
 economic front this week. 
@@ -292,6 +308,7 @@ contributed to this report. """
 # https://www.cnbc.com/2022/05/12/uk-economy-only-going-to-get-worse-as-growth-slowdown-begins.html
 gb = """
 UK economy ‘only going to get worse’ as growth slowdown begins
+By Elliot Smith / Published 12 May 2022
 
 LONDON — A growth slowdown is underway in the U.K. after the economy shrank by 0.1% in March, with economists 
 expecting further contractions this year. 
