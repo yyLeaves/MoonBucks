@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from geopy.distance import geodesic
 import pandas as pd
+import gmplot
 
 
 def get_distance(p1, p2):
@@ -81,6 +82,9 @@ if __name__ == '__main__':
         x1.append(store[0])
         y1.append(store[1])
 
+    x1.append(store_order[0][0])
+    y1.append(store_order[0][1])
+
     x2 = []
     y2 = []
     x2.append(store_order[-1][0])
@@ -96,3 +100,14 @@ if __name__ == '__main__':
     plt.legend()
     plt.savefig("path.png")
     plt.show()
+
+    center_lat = x1[0]
+    center_lon = y1[0]
+
+    gmap = gmplot.GoogleMapPlotter(center_lat,
+                                   center_lon,
+                                   5)
+
+    gmap.scatter(x1, y1, size=50)
+    gmap.plot(x1, y1, "cornflowerblue", edge_width=2.5)
+    gmap.draw("map.html")
