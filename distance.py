@@ -1,11 +1,10 @@
 from moon_utils import random_sample, pick_country
 from cfg import csv_path
-import math
 from geopy.distance import geodesic
 
 
-def find_shortest(country, n):
-    cities_location = random_sample(country, csv_path, n)
+def find_shortest(cities_location):
+    n = len(cities_location)
     print(cities_location)
     distance_min = 0
     distance_min_city = cities_location[0]
@@ -23,11 +22,6 @@ def find_shortest(country, n):
             distance_min_city = i
     return [distance_min_city, distance_min]
 
-# def get_distance(p1, p2):
-#     x = p1[0] - p2[0]
-#     y = p1[1] - p2[1]
-#     return math.sqrt(x ** 2 + y ** 2)
-
 
 if __name__ == '__main__':
     m = 5
@@ -35,7 +29,7 @@ if __name__ == '__main__':
     countries_name = pick_country(m)
     for i in countries_name:
         print("-"*100, "\nCOUNTRY: ", str(i))
-        fs = find_shortest(str(i), n)
+        fs = find_shortest(random_sample(i, csv_path, n))
         print("-" * 50, "\nThe local distribution center for ", str(i)," should be set at ", fs[0], ", which has a sum of distance: ",
               fs[1], "km")
     print("-"*100)
